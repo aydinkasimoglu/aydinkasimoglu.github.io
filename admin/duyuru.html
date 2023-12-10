@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <link rel="icon" href="../images/favicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Edgecut</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome style -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../css/responsive.css" rel="stylesheet" />
+  </head>
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section long_section px-0">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="../index.html">
+            <span> Edgecut </span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              class="d-flex mx-auto flex-column flex-lg-row align-items-center"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="istatistikler.html"
+                    >İstatistikler</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="duyuru.html"
+                    >Duyurular <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="urun.html">Ürünler</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- end header section -->
+    </div>
+
+    <main
+      class="layout_padding"
+      style="flex: 1"
+    >
+      <div class="container">
+        <h1 class="text-left">Duyuru Ekle</h1>
+
+        <form>
+          <div class="form-group">
+            <label for="baslik">Başlık</label>
+            <input
+              type="text"
+              class="form-control"
+              id="baslik"
+              name="baslik"
+              placeholder="Başlık"
+            />
+          </div>
+          <div class="form-group">
+            <label for="icerik">İçerik</label>
+            <textarea
+              class="form-control"
+              id="icerik"
+              name="icerik"
+              rows="3"
+              placeholder="İçerik"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fotograf">Fotoğraf</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="fotograf"
+              name="fotograf"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="alert('Duyuru eklendi!')">Gönder</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayYear"></span> Designed By Edgecut</p>
+      </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      $("#urunlerimiz-collapse").on("show.bs.collapse", function () {
+        $("#birimlerimiz-collapse").collapse("hide");
+      });
+
+      $("#birimlerimiz-collapse").on("show.bs.collapse", function () {
+        $("#urunlerimiz-collapse").collapse("hide");
+      });
+    </script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+  </body>
+</html>

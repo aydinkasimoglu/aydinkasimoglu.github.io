@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <link rel="icon" href="../images/favicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Edgecut</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome style -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../css/responsive.css" rel="stylesheet" />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <!-- Google Chart -->
+    <script type="text/javascript">
+      // Load the Visualization API and the corechart package.
+      google.charts.load("current", { packages: ["corechart"] });
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+        const pieData = new google.visualization.DataTable();
+        pieData.addColumn("string", "Stil");
+        pieData.addColumn("number", "Adet");
+        pieData.addRows([
+          ["Oturma Odası", 20],
+          ["Yemek Odası", 20],
+          ["Yatak Odası", 20],
+        ]);
+
+        const pieOptions = {
+          title: "Mobilya Stilleri Dağılımı",
+          width: 1200,
+          height: 600,
+          colors: ["#b8835b", "#afd5be", "#2555f4"],
+        };
+
+        const pieChart = new google.visualization.PieChart(
+          document.getElementById("pie_chart")
+        );
+        pieChart.draw(pieData, pieOptions);
+
+        const lineOptions = {
+          title: "Aylık Satış Grafiği",
+          width: 1200,
+          height: 600,
+        };
+
+        const lineData = google.visualization.arrayToDataTable([
+          ["Ay", "Satış"],
+          ["Ocak", 1000],
+          ["Şubat", 1170],
+          ["Mart", 660],
+          ["Nisan", 1030],
+          ["Mayıs", 1000],
+          ["Haziran", 1170],
+          ["Temmuz", 660],
+          ["Ağustos", 1030],
+          ["Eylül", 1000],
+          ["Ekim", 1170],
+          ["Kasım", 660],
+          ["Aralık", 1030],
+        ]);
+
+        const lineChart = new google.visualization.LineChart(
+          document.getElementById("line_chart")
+        );
+
+        lineChart.draw(lineData, lineOptions);
+
+        const barOptions = {
+          title: "Stil Bazlı Satış Grafiği",
+          width: 1200,
+          height: 600,
+        };
+
+        const barData = google.visualization.arrayToDataTable([
+          ["Stil", "Satış"],
+          ["Oturma Odası", 1000],
+          ["Yemek Odası", 1170],
+          ["Yatak Odası", 660],
+        ]);
+
+        const barChart = new google.visualization.BarChart(
+          document.getElementById("bar_chart")
+        );
+
+        barChart.draw(barData, barOptions);
+      }
+    </script>
+  </head>
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section long_section px-0">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="../index.html">
+            <span> Edgecut </span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              class="d-flex mx-auto flex-column flex-lg-row align-items-center"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="istatistikler.html"
+                    >İstatistikler <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="duyuru.html">Duyurular</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="urun.html">Ürünler</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- end header section -->
+    </div>
+
+    <main
+      class="layout_padding d-flex flex-column align-items-center"
+      style="flex: 1"
+    >
+      <div class="container">
+        <h1 class="text-center">İstatistikler</h1>
+        <div id="pie_chart"></div>
+        <hr />
+        <div id="line_chart"></div>
+        <hr>
+        <div id="bar_chart"></div>
+      </div>
+    </main>
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayYear"></span> Designed By Edgecut</p>
+      </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      $("#urunlerimiz-collapse").on("show.bs.collapse", function () {
+        $("#birimlerimiz-collapse").collapse("hide");
+      });
+
+      $("#birimlerimiz-collapse").on("show.bs.collapse", function () {
+        $("#urunlerimiz-collapse").collapse("hide");
+      });
+    </script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+  </body>
+</html>
